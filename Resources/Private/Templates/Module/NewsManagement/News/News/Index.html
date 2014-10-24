@@ -1,25 +1,61 @@
-<f:layout name="Default" />
-
-<f:section name="Title">A list of news</f:section>
-
+<f:layout name="DefaultBackend" />
 <f:section name="Content">
-	<f:if condition="{myNews}">
-		<f:then>
-			<ul>
-				<f:for each="{myNews}" as="news">
-					<li>
-						<f:link.action action="show" arguments="{news: news}">{news.title}</f:link.action>
-						<f:link.action action="edit" arguments="{news: news}">Edit</f:link.action>
-						<f:form action="delete" arguments="{news: news}">
-							<f:form.submit value="Delete" />
-						</f:form>
-					</li>
-				</f:for>
-			</ul>
-		</f:then>
-		<f:else>
-			<p>No news created yet.</p>
-		</f:else>
-	</f:if>
-	<p><f:link.action action="new">Create a new news</f:link.action></p>
+	<div class="row neos-content neos-container-fluid">
+		<f:render partial="Module\FlashMessage" arguments="{severityName: flashmessage}" />
+		<legend>News list</legend>
+		<br />
+		<f:if condition="{myNews}">
+			<f:then>
+				<table id="newsletter-dataTable" class="neos-table">
+					<thead>
+					<tr>
+						<th>Title</th>
+						<th>Teaser</th>
+						<th>Description</th>
+						<th></th>
+					</tr>
+					</thead>
+					<tbody>
+					<f:for each="{myNews}" as="news">
+						<tr><td><f:link.action action="show" arguments="{news: news}">{news.title}</f:link.action></td>
+							<td>
+								{news.teaser}
+							</td>
+							<td>
+								{news.description}
+							</td>
+							<td>
+								<f:link.action action="show" arguments="{news: news}" class="neos-btn neos-button pull-right" title="view">
+								<i class="icon-info-sign icon-white"></i>
+								</f:link.action>
+								<f:link.action action="edit" arguments="{news: news}" class="neos-btn neos-button pull-right" title="edit">
+								<i class="icon-pencil icon-white"></i>
+								</f:link.action>
+								<f:link.action action="delete" arguments="{news: news}" class="neos-btn neos-button pull-right" title="delete" onclick="return confirm('delete alert')">
+								<i class="icon-trash icon-white"></i>
+								</f:link.action>
+							</td>
+						</tr>
+					</f:for>
+					</tbody>
+				</table>
+			</f:then>
+			<f:else>
+				<p>No news!</p>
+			</f:else>
+		</f:if>
+	</div>
+	<div class="neos-form-actions neos-footer">
+		<div class="pull-right">
+			<f:link.action action="new" class="neos-btn neos-button neos-button-primary" title="title">
+			<i class="icon-user icon-white"></i>
+			Create news
+			</f:link.action>
+		</div>
+	</div>
+	<script>
+		var deleteMessage = 'confirm delete';
+	</script>
+	<f:render partial="Module/JavaScripts"/>
+	<f:render partial="Module/StyleSheets"/>
 </f:section>

@@ -26,7 +26,8 @@ TYPO3:
                 title: 'News list'
             additionalResources:
               javaScripts:
-                - resource://WE.Example/Public/JavaScript/backend.js
+                - resource://WE.Example/Public/JavaScript/jquery.dataTables.min.js
+                - resource://WE.Example/Public/JavaScript/Backend/news.datatable.js
               styleSheets:
-                - resource://WE.Example/Public/Styles/backend.css
+                - resource://WE.Example/Public/Styles/Backend/dataTable.css
 

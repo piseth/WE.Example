@@ -1,0 +1,32 @@
+# Add auto include or use include: resource://WE.Example/Private/TypoScript/Root.ts2
+TYPO3:
+  Neos:
+    typoScript:
+      # autoInclude TS2 for Lelesys.Plugin.Newsletter :
+      autoInclude:
+        'WE.Example': TRUE
+
+    modules:
+      newsmanagement:
+        label: 'News Management'
+        controller: '\WE\Example\Controller\Module\NewsManagementController'
+        description: 'You can configure newsletter here'
+        icon: 'icon-briefcase'
+        resource: 'WE_Example_NewsletterManagement'
+        submodules:
+          news:
+            label: News
+            controller: '\WE\Example\Controller\Module\NewsManagement\News\NewsController'
+            description: 'You can configure newsletter here.'
+            icon: 'icon-archive'
+            resource: 'WE_Example_NewsletterManagement_News'
+            actions:
+              index:
+                label: 'News list'
+                title: 'News list'
+            additionalResources:
+              javaScripts:
+                - resource://WE.Example/Public/JavaScript/backend.js
+              styleSheets:
+                - resource://WE.Example/Public/Styles/backend.css
+

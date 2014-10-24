@@ -1,0 +1,7 @@
+# TYPO3 Example plugin
+'WE.Example:Plugin':
+  superTypes:
+    - 'TYPO3.Neos:Plugin'
+  ui:
+    label: 'Example Plugin'
+    group: 'plugins'

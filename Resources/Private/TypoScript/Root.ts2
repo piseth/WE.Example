@@ -1,0 +1,8 @@
+# WE Example plugin
+prototype(WE.Example:Plugin) < prototype(TYPO3.Neos:Plugin)
+prototype(WE.Example:Plugin) {
+	package = 'WE.Example'
+	controller = 'News'
+	action = 'index'
+	argumentNamespace = 'news'
+}

@@ -1,0 +1,28 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Edit news "{news.name}"</f:section>
+
+<f:section name="Content">
+	<f:form action="update" object="{news}" objectName="news">
+		<ol>
+			<li>
+				<label for="title">Title</label>
+				<f:form.textfield property="title" id="title" />
+			</li>
+		
+			<li>
+				<label for="teaser">Teaser</label>
+				<f:form.textfield property="teaser" id="teaser" />
+			</li>
+		
+			<li>
+				<label for="desc">Desc</label>
+				<f:form.textfield property="description" id="desc" />
+			</li>
+		
+			<li>
+				<f:form.submit value="Update" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>

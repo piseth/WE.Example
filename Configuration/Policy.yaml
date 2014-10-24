@@ -1,0 +1,16 @@
+#                                                                        #
+# Security policy for the WE.Example package                             #
+#                                                                        #
+
+resources:
+  methods:
+    WE_Example_NewsAccess: 'method(WE\Example\Controller\NewsController->(index)Action())'
+    WE_Example_NewsletterManagement: 'method(WE\Example\Controller\Module\NewsManagementController->.*Action())'
+    WE_Example_NewsletterManagement_News: 'method(WE\Example\Controller\Module\NewsManagement\News\NewsController->.*Action())'
+
+acls:
+  Everybody:
+    methods:
+      WE_Example_NewsAccess: GRANT
+      WE_Example_NewsletterManagement: GRANT
+      WE_Example_NewsletterManagement_News: GRANT

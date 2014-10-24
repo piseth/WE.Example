@@ -1,0 +1,30 @@
+<f:layout name="Default" />
+
+<f:section name="Title">New news</f:section>
+
+<f:section name="Content">
+	<p>Just fill out the following form to create a new news:</p>
+
+	<f:form action="create" objectName="newNews">
+		<ol>
+			<li>
+				<label for="title">News</label>
+				<f:form.textfield property="title" id="title" />
+			</li>
+		
+			<li>
+				<label for="teaser">Teaser</label>
+				<f:form.textfield property="teaser" id="teaser" />
+			</li>
+		
+			<li>
+				<label for="desc">Description</label>
+				<f:form.textfield property="description" id="desc" />
+			</li>
+		
+			<li>
+				<f:form.submit value="Create" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>

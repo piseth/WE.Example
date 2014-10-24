@@ -1,0 +1,25 @@
+<f:layout name="Default" />
+
+<f:section name="Title">A list of news</f:section>
+
+<f:section name="Content">
+	<f:if condition="{news}">
+		<f:then>
+			<ul>
+				<f:for each="{news}" as="news">
+					<li>
+						<f:link.action action="show" arguments="{news: news}">{news.name}</f:link.action>
+						<f:link.action action="edit" arguments="{news: news}">Edit</f:link.action>
+						<f:form action="delete" arguments="{news: news}">
+							<f:form.submit value="Delete" />
+						</f:form>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No news created yet.</p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new">Create a new news</f:link.action></p>
+</f:section>

@@ -3,10 +3,10 @@
 <f:section name="Title">A list of news</f:section>
 
 <f:section name="Content">
-	<f:if condition="{news}">
+	<f:if condition="{myNews}">
 		<f:then>
 			<ul>
-				<f:for each="{news}" as="news">
+				<f:for each="{myNews}" as="news">
 					<li>
 						<f:link.action action="show" arguments="{news: news}">{news.name}</f:link.action>
 						<f:link.action action="edit" arguments="{news: news}">Edit</f:link.action>

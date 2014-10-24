@@ -7,10 +7,10 @@ namespace WE\Example\Controller\Module\NewsManagement\News;
  *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Mvc\Controller\ActionController;
+use WE\Example\Controller\Module\NewsManagementController;
 use WE\Example\Domain\Model\News;
 
-class NewsController extends ActionController {
+class NewsController extends NewsManagementController {
 
 	/**
 	 * @Flow\Inject

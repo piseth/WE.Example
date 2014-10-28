@@ -5,21 +5,29 @@
 <f:section name="Content">
 	<f:if condition="{myNews}">
 		<f:then>
-			<ul>
-				<f:for each="{myNews}" as="news">
-					<li>
-						<f:link.action action="show" arguments="{news: news}">{news.title}</f:link.action>
-						<f:link.action action="edit" arguments="{news: news}">Edit</f:link.action>
-						<f:form action="delete" arguments="{news: news}">
-							<f:form.submit value="Delete" />
-						</f:form>
-					</li>
-				</f:for>
-			</ul>
+			<div class="">
+				<table class="table">
+					<f:for each="{myNews}" as="news">
+						<tr>
+							<td>
+								<f:link.action action="show" arguments="{news: news}">{news.title}</f:link.action>
+							</td>
+							<td>
+								<f:link.action action="edit" arguments="{news: news}">Edit</f:link.action>
+							</td>
+							<td>
+							<f:form action="delete" arguments="{news: news}">
+								<f:form.submit value="Delete" />
+							</f:form>
+							</td>
+						</tr>
+					</f:for>
+				</table>
+			</div>
 		</f:then>
 		<f:else>
 			<p>No news created yet.</p>
 		</f:else>
 	</f:if>
-	<p><f:link.action action="new">Create a new news</f:link.action></p>
+	<p class="btn btn-default"><f:link.action action="new">Create a new news</f:link.action></p>
 </f:section>

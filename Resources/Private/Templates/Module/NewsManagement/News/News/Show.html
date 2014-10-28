@@ -1,23 +1,27 @@
-<f:layout name="Default" />
-
-<f:section name="Title">Show news"{news.name}"</f:section>
-
+<f:layout name="DefaultBackend" />
 <f:section name="Content">
-	<table>
-		<tr>
-			<th>Title</th>
-			<td>{news.title}</td>
-		</tr>
-	
-		<tr>
-			<th>Teaser</th>
-			<td>{news.teaser}</td>
-		</tr>
-	
-		<tr>
-			<th>Description</th>
-			<td>{news.description}</td>
-		</tr>
-	</table>
-	<f:link.action action="index">Back</f:link.action>
+	<div class="row neos-content neos-container-fluid">
+		<legend>{news.title}</legend>
+		<table class="neos-table neos-table-bordered neos-table-condensed">
+			<tr>
+				<th>Title</th>
+				<td>{news.title}</td>
+			</tr>
+
+			<tr>
+				<th>Teaser</th>
+				<td>{news.teaser}</td>
+			</tr>
+
+			<tr>
+				<th>Description</th>
+				<td>{news.description}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="neos-form-actions neos-footer">
+		<f:link.action action="index" class="neos-btn neos-button" title="Back">
+			Back
+		</f:link.action>
+	</div>
 </f:section>

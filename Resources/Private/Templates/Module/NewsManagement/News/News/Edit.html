@@ -1,28 +1,32 @@
-<f:layout name="Default" />
-
-<f:section name="Title">Edit news "{news.name}"</f:section>
-
+<f:layout name="DefaultBackend" />
 <f:section name="Content">
+	<f:render partial="Module\FlashMessage" arguments="{severityName: flashmessage}"/>
 	<f:form action="update" object="{news}" objectName="news">
-		<ol>
-			<li>
+		<div class="neos-content neos-container-fluid">
+			<legend>{news.title}</legend><br />
+			<div class="neos-control-group">
 				<label for="title">Title</label>
 				<f:form.textfield property="title" id="title" />
-			</li>
-		
-			<li>
+			</div>
+
+			<div class="neos-control-group">
 				<label for="teaser">Teaser</label>
 				<f:form.textfield property="teaser" id="teaser" />
-			</li>
-		
-			<li>
+			</div>
+
+			<div class="neos-control-group">
 				<label for="desc">Desc</label>
 				<f:form.textfield property="description" id="desc" />
-			</li>
-		
-			<li>
-				<f:form.submit value="Update" />
-			</li>
-		</ol>
+			</div>
+		</div>
+		<div class="neos-form-actions neos-footer">
+			<f:link.action action="index" class="neos-btn neos-button">Cancel</f:link.action>
+			<div class="pull-right">
+				<f:form.submit class="neos-btn neos-button-primary neos-button" value="Update" />
+			</div>
+		</div>
 	</f:form>
+
+	<f:render partial="Module/JavaScripts"/>
+	<f:render partial="Module/StyleSheets"/>
 </f:section>

@@ -31,7 +31,7 @@ Configuration/Settings.yaml
 TYPO3:
   Neos:
     typoScript:
-      # autoInclude TS2 for Lelesys.Plugin.Newsletter :
+      # autoInclude TS2 for WE.Example :
       autoInclude:
         'WE.Example': TRUE
 
@@ -53,3 +53,4 @@ Done!
 
 2. Create Module
 ================
+Please look into our code example!

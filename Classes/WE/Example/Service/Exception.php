@@ -9,7 +9,7 @@ namespace WE\Example\Service;
  *                                                                         */
 
 /**
- * A generic Lelesys.Plugin.Newsletter Exception
+ * A generic WE.Example Exception
  *
  * @api
  */

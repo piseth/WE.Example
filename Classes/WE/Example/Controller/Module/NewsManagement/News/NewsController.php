@@ -19,6 +19,14 @@ class NewsController extends NewsManagementController {
 	protected $newsRepository;
 
 	/**
+	 * Person Service
+	 *
+	 * @Flow\Inject
+	 * @var \WE\Example\Service\NewsService
+	 */
+	protected $newsService;
+
+	/**
 	 * @return void
 	 */
 	public function indexAction() {
@@ -71,9 +79,17 @@ class NewsController extends NewsManagementController {
 	 * @param \WE\Example\Domain\Model\News $news
 	 * @return void
 	 */
-	public function deleteAction(News $news) {
-		$this->newsRepository->remove($news);
-		$this->addFlashMessage('Deleted a news.');
+	public function deleteAction(\WE\Example\Domain\Model\News $news) {
+		try {
+			$this->newsService->delete($news);
+			$header = 'Deleted the recipient.';
+			$message = 'can delete news';
+			$this->addFlashMessage($message, $header, \TYPO3\Flow\Error\Message::SEVERITY_OK);
+		} catch (WE\Example\Service\Exception $exception) {
+			$header = 'Cannot deleted recipient at this time!!.';
+			$message = 'Cannot delete news';
+			$this->addFlashMessage($message, $header, \TYPO3\Flow\Error\Message::SEVERITY_ERROR);
+		}
 		$this->redirect('index');
 	}
 

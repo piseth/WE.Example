@@ -4,7 +4,7 @@
 
 resources:
   methods:
-    WE_Example_NewsAccess: 'method(WE\Example\Controller\NewsController->(index)Action())'
+    WE_Example_NewsAccess: 'method(WE\Example\Controller\NewsController->.*Action())'
     WE_Example_NewsletterManagement: 'method(WE\Example\Controller\Module\NewsManagementController->.*Action())'
     WE_Example_NewsletterManagement_News: 'method(WE\Example\Controller\Module\NewsManagement\News\NewsController->.*Action())'
 

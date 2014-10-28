@@ -8,7 +8,7 @@
 			<ul>
 				<f:for each="{myNews}" as="news">
 					<li>
-						<f:link.action action="show" arguments="{news: news}">{news.name}</f:link.action>
+						<f:link.action action="show" arguments="{news: news}">{news.title}</f:link.action>
 						<f:link.action action="edit" arguments="{news: news}">Edit</f:link.action>
 						<f:form action="delete" arguments="{news: news}">
 							<f:form.submit value="Delete" />

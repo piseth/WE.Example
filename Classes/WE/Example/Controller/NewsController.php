@@ -22,7 +22,7 @@ class NewsController extends ActionController {
 	 * @return void
 	 */
 	public function indexAction() {
-		$this->view->assign('news', $this->newsRepository->findAll());
+		$this->view->assign('myNews', $this->newsRepository->findAll());
 	}
 
 	/**
